@@ -50,7 +50,7 @@
       <kbd>K</kbd>
       <span class="sound">tom</span>
     </div>
-    
+
     <div data-key="76" class="key">
       <kbd>L</kbd>
       <span class="sound">tink</span>
@@ -68,6 +68,16 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
   <script>
+
+      window.addEventListener('keydown', function(event) {
+        const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+        
+        if (audio) {
+          audio.play()
+        } else {
+          return;
+        }
+      });   
 
   </script>
 
