@@ -59,9 +59,26 @@
     input {
       width: 100px;
     }
+
+    .hl { 
+      color: var(--base);
+    }
   </style>
 
   <script>
+
+      const inputs = document.querySelectorAll('.controls input');
+      
+      
+
+      inputs.forEach(input => input.addEventListener("change", function() {
+          console.log(this.value);
+      }));
+      
+      inputs.forEach(input => input.addEventListener("mousemove", function() {
+          console.log(this.value);
+      }));
+
   </script>
 
 </body>
