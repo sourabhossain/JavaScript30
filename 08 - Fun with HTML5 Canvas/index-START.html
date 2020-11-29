@@ -37,6 +37,11 @@
       if (!isDrawing) {
         return;
       }
+
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(event.offsetX, event.offsetY);
+      ctx.stroke();
     });
 
     canvas.addEventListener('mousedown', () => isDrawing = true);
