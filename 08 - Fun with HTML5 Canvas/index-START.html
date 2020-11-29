@@ -42,9 +42,14 @@
       ctx.moveTo(lastX, lastY);
       ctx.lineTo(event.offsetX, event.offsetY);
       ctx.stroke();
+      [lastX, lastY] = [event.offsetX, event.offsetY];
     });
 
-    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('mousedown', (event) => {
+      isDrawing = true;
+      [lastX, lastY] = [event.offsetX, event.offsetY];
+    });
+
     canvas.addEventListener('mouseup', () => isDrawing = false);
 
   </script>
