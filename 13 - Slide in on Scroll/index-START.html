@@ -145,6 +145,7 @@
   </div>
 
   <script>
+
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function () {
@@ -160,6 +161,15 @@
         if (callNow) func.apply(context, args);
       };
     }
+    
+    const sliderImages = document.querySelectorAll('.slide-in');
+    
+    function checkSlide(event) {
+
+    }
+
+    window.addEventListener('scroll', checkSlide);
+
   </script>
 
   <style>
