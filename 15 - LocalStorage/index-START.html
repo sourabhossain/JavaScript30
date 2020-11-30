@@ -50,7 +50,20 @@
     const itemsList = document.querySelector('.plates');
     const items = [];
     
-    function addItem() {
+    function addItem(event) {
+      event.preventDefault();
+      
+      const text = (this.querySelector('[name=item]')).value;
+      const item = {
+        text, 
+        done: false
+      };
+      
+      items.push(item);
+      this.reset();
+    }
+
+    function populateList() {
       
     }
 
