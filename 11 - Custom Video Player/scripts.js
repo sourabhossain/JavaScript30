@@ -1,5 +1,5 @@
 // Get out elements
-const player = player.querySelector('.player');
+const player = document.querySelector('.player');
 const video = player.querySelector('.viewer');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
@@ -20,5 +20,7 @@ function updateButton() {
 
 // Hook up the event listeners
 video.addEventListener('click', togglePlay);
-video.addEventListener('play', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+
 toggle.addEventListener('click', togglePlay);
