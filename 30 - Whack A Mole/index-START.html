@@ -17,18 +17,23 @@
     <div class="hole hole1">
       <div class="mole"></div>
     </div>
+
     <div class="hole hole2">
       <div class="mole"></div>
     </div>
+
     <div class="hole hole3">
       <div class="mole"></div>
     </div>
+
     <div class="hole hole4">
       <div class="mole"></div>
     </div>
+
     <div class="hole hole5">
       <div class="mole"></div>
     </div>
+
     <div class="hole hole6">
       <div class="mole"></div>
     </div>
@@ -67,7 +72,10 @@
 
       setTimeout(() => {
         hole.classList.remove('up');
-        if (!timeUp) peep();
+        
+        if(!timeUp) {
+          peep();
+        }
       }, time);
     }
 
@@ -79,12 +87,17 @@
       setTimeout(() => timeUp = true, 10000)
     }
 
-    function bonk(e) {
-      if (!e.isTrusted) return; // cheater!
+    function bonk(event) {
+      if(!event.isTrusted) {
+        return;
+      }
+
       score++;
       this.parentNode.classList.remove('up');
       scoreBoard.textContent = score;
     }
+
+    moles.forEach(mole => mole.addEventListener('click', bonk));
 
 
   </script>
